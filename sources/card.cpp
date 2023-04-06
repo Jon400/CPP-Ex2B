@@ -8,7 +8,7 @@ using namespace ariel;
 
 Card::Card(int num)
 {
-    this->num;
+    this->num = num;
 }
 
 std::string Card::to_string() const
@@ -62,21 +62,21 @@ std::string Card::to_string() const
     switch ((num % 4) + 1)
     {
         case CardTypes::Spades:
-            name = "Spades";
+            type = "Spades";
             break;
         case CardTypes::Hearts:
-            name = "Hearts";
+            type = "Hearts";
             break;
         case CardTypes::Diamonds:
-            name = "Diamonds";
+            type = "Diamonds";
             break;
         default:
-            name = "Clubs";
+            type = "Clubs";
             break;
     }
 
     // Concatenation of the card name
-    str = name.append(" of ").append(type);
+    str = name + " of " + type;
     return str;
 }
 
@@ -86,3 +86,7 @@ Card::~Card()
 
 }
 
+int ariel::compare(const Card & c1, const Card & c2)
+{
+    return (c1.num / 4) - (c2.num / 4);
+}

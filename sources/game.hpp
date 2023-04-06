@@ -9,8 +9,10 @@ namespace ariel
     class Game
     {
     private:
-        ariel::Player& p1, p2; // Player objects of the game
+        ariel::Player& p1, &p2; // Player objects of the game
         std::vector<ariel::Card> cards; // List of cards in the play
+        std::vector<int> stats; // Store the information about the results each turn
+        std::vector<std::string> turnPrints; // Store all corresponding prints for all previous turns
     public:
         Game(ariel::Player&, ariel::Player&);
         ~Game();
