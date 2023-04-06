@@ -11,6 +11,7 @@ Card::Card(int num)
     this->num = num;
 }
 
+
 std::string Card::to_string() const
 {
     // Extract the number of the card from num

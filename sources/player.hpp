@@ -14,6 +14,10 @@ namespace ariel
         int cardsTaken; // number of cards which the player take during the game
     public:
         Player();
+        Player(const Player&); // copy constructor
+        Player& operator=(Player); // move operator
+        Player(Player&&) noexcept; // move constructor
+        Player& operator=(Player&&) noexcept; // copy assignment operator
         Player(std::string);
         ~Player();
         // Const prevents function from modify the pointer this and its values

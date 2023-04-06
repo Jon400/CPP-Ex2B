@@ -15,6 +15,10 @@ namespace ariel
         std::vector<std::string> turnPrints; // Store all corresponding prints for all previous turns
     public:
         Game(ariel::Player&, ariel::Player&);
+        Game(const Game&); // copy constructor
+        Game& operator=(Game&&) noexcept; // move operator
+        Game(Game&&) noexcept; // move constructor
+        Game& operator=(Game); // copy assignment operator
         ~Game();
         // Const prevents function from modify the pointer this and its values
         void playTurn();
