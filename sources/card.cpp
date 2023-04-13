@@ -89,5 +89,37 @@ Card::~Card()
 
 int ariel::compare(const Card & c1, const Card & c2)
 {
+    // Ace is the highest card, but it is also lower than 2
+    if ((c1.num / 4)==0)
+    { 
+        if((c2.num / 4) == 1)
+        {
+            return -1;
+        }
+        else if ((c2.num / 4) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+    if ((c2.num / 4)==0)
+    { 
+        if((c1.num / 4) == 1)
+        {
+            return 1;
+        }
+        else if ((c1.num / 4) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
+    }
     return (c1.num / 4) - (c2.num / 4);
 }

@@ -109,7 +109,7 @@ void Game::playTurn()
     }
 
     // In case the game is over and there is tie
-    for (int i = 0; i < (num_of_ties-1) * 2; i++)
+    for (int i = 0; i < (num_of_ties) * 2; i++)
     {
         step(PlayerAction::Tie, this->p1);
         step(PlayerAction::Tie, this->p2);
